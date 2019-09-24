@@ -18,14 +18,16 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Security/Security.h>
+@import Foundation;
+@import Security;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface MTKeychainWrapper : NSObject
 
-- (OSStatus)removeObjectsForKeys:(NSArray *)keys;
-- (OSStatus)setObject:(id)object forKey:(NSString *)key;
-- (id)objectForKey:(NSString *)key;
+- (OSStatus)removeObjectsForKeys:(NSArray<NSString *> *)keys;
+- (OSStatus)setObject:(nullable id)object forKey:(NSString *)key;
+- (nullable id)objectForKey:(NSString *)key;
 - (void)resetKeychainItem;
 
 /** 
@@ -37,3 +39,5 @@
 - (id)initWithIdentifier:(NSString *)identifier accessGroup:(NSString *)accessGroup;
 
 @end
+
+NS_ASSUME_NONNULL_END

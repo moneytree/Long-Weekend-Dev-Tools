@@ -55,7 +55,7 @@ static NSString * const LWEKeychainDictionaryKey = @"LWEKeychainDictionaryKey";
   return status;
 }
 
-- (OSStatus)removeObjectsForKeys:(NSArray *)keys
+- (OSStatus)removeObjectsForKeys:(NSArray<id> *)keys
 {
   [self.keychainData removeObjectsForKeys:keys];
   return [self writeToKeychain_];
